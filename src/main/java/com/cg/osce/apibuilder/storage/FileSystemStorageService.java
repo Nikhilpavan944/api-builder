@@ -27,7 +27,7 @@ public class FileSystemStorageService implements StorageService {
     @Autowired
     public FileSystemStorageService(StorageProperties properties) {
     	this.rootAPILocation = Paths.get("src/main/resources/apiDocument/");
-        this.rootXSDLocation = Paths.get("src/main/resources/xsd/");
+        this.rootXSDLocation = Paths.get("xsd/");
     }
 
     @Override
