@@ -2,7 +2,7 @@ package com.cg.osce.apibuilder.pojo;
 
 public class Constants {
 
-	public static final String FILELOCATION = "C:\\Users\\nsannadi\\testout.txt";
+	public static final String FILELOCATION = "src/main/resources/apiDocument/apiDocument.yaml";
 	public static final String XMLAPPLICATION="application/xml";
 	public static final String JSONAPPLICATION="application/json";
 	public static final String SET$REF="#/definitions/" ;
