@@ -123,11 +123,17 @@ public class FileUploadController {
 		    };
 		    Process p;
 			try {
+				FileWriter documetnWriter = new FileWriter("src/main/resources/apiDocument/apiDocument.yaml");
+				documetnWriter.write("API Document");
+				documetnWriter.close();
+				
 				p = Runtime.getRuntime().exec(command);
 			        new Thread(new SyncPipe(p.getErrorStream(), System.err)).start();
 		                new Thread(new SyncPipe(p.getInputStream(), System.out)).start();
 		                PrintWriter stdin = new PrintWriter(p.getOutputStream());
-		                stdin.println("xjc -d src/main/java/com/osce/api_builder/xsd -p entity  xsd/"+ formWrapper.getFile().getOriginalFilename());
+		                stdin.println("hostname");
+
+		                stdin.println("xjc -d src/main/java/com/osce/api_builder/xsd -p entity "+ formWrapper.getFile().getOriginalFilename());
 		                stdin.close();
 		                p.waitFor();
 		    	} catch (Exception e) {
