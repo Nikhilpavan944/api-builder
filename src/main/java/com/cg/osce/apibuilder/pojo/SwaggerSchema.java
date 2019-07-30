@@ -115,7 +115,7 @@ public class SwaggerSchema {
 	@XmlElement(required = true)
 	protected String host;
 	@XmlElement(required = true)
-	protected String basepath;
+	protected String basePath;
 	/**@XmlElement(required = false)
 	protected List<SwaggerSchema.Tags> tags;**/
 	@XmlElement(required = false)
@@ -131,12 +131,12 @@ public class SwaggerSchema {
 		this.host = host;
 	}
 
-	public String getBasepath() {
-		return basepath;
+	public String getBasePath() {
+		return basePath;
 	}
 
-	public void setBasepath(String basepath) {
-		this.basepath = basepath;
+	public void setBasePath(String basePath) {
+		this.basePath = basePath;
 	}
 
 	public ObjectNode getDefinitions() {

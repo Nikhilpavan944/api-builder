@@ -384,13 +384,13 @@ public class XmlSchema2yamlImpl implements IxmlSchema2yaml {
 			if (type1 instanceof ParameterizedType) {
 				ParameterizedType pt = (ParameterizedType) type1;
 				for (Type t : pt.getActualTypeArguments()) {
-					String arrayType = t.getTypeName().replace("com.cg.nikhil.entity.", "");
+					String arrayType = t.getTypeName().replace("com.cg.osce.apibuilder.entity.", "");
 					if (arrayType.contains("java")) {
 						System.err.println(arrayType);
 						int length = arrayType.split("\\.").length;
 						items.put("type", getType(arrayType.split("\\.")[length - 1]));
 					} else {
-						items.put("$ref", "#/definitions/" + t.getTypeName().replace("com.cg.nikhil.entity.", ""));
+						items.put("$ref", "#/definitions/" + t.getTypeName().replace("com.cg.osce.apibuilder.entity.", ""));
 					}
 				}
 			}
@@ -424,13 +424,13 @@ public class XmlSchema2yamlImpl implements IxmlSchema2yaml {
 
 	@Override
 	public Set<Class<? extends Object>> getClassDetails() {
-		Reflections reflections = new Reflections("com.cg.nikhil.entity", new SubTypesScanner(false));
+		Reflections reflections = new Reflections("com.cg.osce.apibuilder.entity", new SubTypesScanner(false));
 		return reflections.getSubTypesOf(Object.class);
 
 	}
 
 	public Set<Class<? extends Enum>> getEnumDetails() {
-		Reflections reflections = new Reflections("com.cg.nikhil.entity", new SubTypesScanner(false));
+		Reflections reflections = new Reflections("com.cg.osce.apibuilder.entity", new SubTypesScanner(false));
 		return reflections.getSubTypesOf(Enum.class);
 
 	}
